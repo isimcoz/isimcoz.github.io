@@ -1,4 +1,4 @@
-# isimcoz.github.io
+# isimcoz
 
 Günlük hayatın dijital yardımcısı: maaş zammı, kredi taksiti, KDV, kira artışı hesaplama ve hazır dilekçe, CV şablonları.
 
