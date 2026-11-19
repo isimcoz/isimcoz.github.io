@@ -254,10 +254,10 @@
   // ---------------- calculators ----------------
   const TOOLS_VIEW = {
     maas(){ page("maas", `
-      <div class="seg" id="mode"><button type="button" data-v="oran" aria-pressed="true">Zam oranı biliyorum</button><button type="button" data-v="yeni" aria-pressed="false">Yeni maaşı biliyorum</button></div>
+      <div class="seg" id="mode"><button type="button" data-v="oran" aria-pressed="true">Yeni maaşımı hesapla</button><button type="button" data-v="yeni" aria-pressed="false">Zam oranımı bul</button></div>
       <div class="f"><label for="m1">Şu anki maaşın (₺)</label><input id="m1" inputmode="decimal" placeholder="Örn. 30.000"></div>
       <div class="f" id="fz"><label for="m2">Zam oranı (%)</label><input id="m2" inputmode="decimal" placeholder="Örn. 25"></div>
-      <div class="f" id="fy" hidden><label for="m3">Yeni maaşın (₺)</label><input id="m3" inputmode="decimal" placeholder="Örn. 37.500"></div>
+      <div class="f" id="fy" hidden><label for="m3">Zamlı maaşın (₺)</label><input id="m3" inputmode="decimal" placeholder="Örn. 37.500"></div>
       <div id="out"></div>
       <p class="note">Net maaş girersen sonuç da net, brüt girersen brüt olur. Vergi dilimi değişikliği net maaşı ayrıca etkileyebilir.</p>`,
       ()=>{
@@ -270,7 +270,7 @@
             const n=a*(1+p/100);
             $("#out").innerHTML=`<div class="res"><div class="k">Yeni maaşın</div><div class="big">${TL.format(n)}</div><dl><dt>Zam tutarı</dt><dd>${TL.format(n-a)}</dd><dt>Yıllık fark (12 ay)</dt><dd>${TL.format((n-a)*12)}</dd></dl></div>`;
           } else { const n=num($("#m3").value);
-            if(!(a>0)||!(n>0)){ $("#out").innerHTML=empty("Eski ve yeni maaşını yaz, zam oranını hesaplayalım."); return; }
+            if(!(a>0)||!(n>0)){ $("#out").innerHTML=empty("Zamdan önceki ve sonraki maaşını yaz; sana yüzde kaç zam yapıldığını hesaplayalım."); return; }
             const p=(n/a-1)*100;
             $("#out").innerHTML=`<div class="res"><div class="k">Aldığın zam oranı</div><div class="big">%${N2.format(p)}</div><dl><dt>Zam tutarı</dt><dd>${TL.format(n-a)}</dd></dl></div>`;
           }
