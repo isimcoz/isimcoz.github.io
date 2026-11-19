@@ -102,6 +102,32 @@
   .others a{display:inline-block;margin:0 6px 8px 0;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 12px;font-size:14px;font-weight:600;text-decoration:none}
   .prose{max-width:680px;line-height:1.65}
   .prose h1{font-size:28px;font-weight:800}
+  .guide{max-width:720px}
+  .guide h1{font-size:28px;font-weight:800;letter-spacing:-.01em;margin:4px 0 6px}
+  .guide .upd{font-size:13px;color:var(--muted);margin-bottom:16px}
+  .guide .sum{background:var(--blue-bg);border-radius:16px;padding:14px 16px;margin-bottom:18px;line-height:1.55}
+  .guide .sum b{display:block;margin-bottom:4px}
+  .guide details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:10px;overflow:hidden}
+  .guide summary{cursor:pointer;padding:15px 16px;font-weight:700;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:10px}
+  .guide summary::-webkit-details-marker{display:none}
+  .guide summary::after{content:"+";color:var(--muted);font-size:20px;line-height:1}
+  .guide details[open] summary::after{content:"–"}
+  .guide .body{padding:0 16px 14px;line-height:1.65;font-size:15px}
+  .guide .body ul{padding-left:20px;margin:6px 0}
+  .guide .body li{margin:4px 0}
+  .guide .src{font-size:13px;color:var(--muted);margin-top:18px;line-height:1.6}
+  .guide .src a{color:var(--blue)}
+  .tbl{width:100%;border-collapse:collapse;font-size:14px;margin:8px 0}
+  .tbl td{padding:8px 4px;border-bottom:1px solid var(--line)} .tbl td:last-child{text-align:right;font-weight:700}
+  .wiz{max-width:640px}
+  .wiz h1{font-size:26px;font-weight:800;margin:4px 0 4px}
+  .opts{display:grid;gap:8px;margin-top:14px}
+  .opt{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px;font-weight:700;font-size:16px;cursor:pointer;text-align:left;width:100%}
+  .opt:hover{border-color:var(--blue)}
+  .opt i{font-style:normal;font-size:22px;width:34px;text-align:center}
+  .opt small{display:block;font-weight:500;color:var(--muted);font-size:13px;margin-top:2px}
+  .steps{display:flex;gap:6px;margin:10px 0 2px} .steps span{height:5px;flex:1;border-radius:5px;background:var(--line)} .steps span.on{background:var(--blue)}
+  .back{border:0;background:none;color:var(--blue);font-weight:700;cursor:pointer;padding:6px 0;margin-top:10px}
   footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);font-size:13px}
   footer .links{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:10px}
   footer a{text-decoration:none;font-weight:600}
@@ -119,7 +145,7 @@
   <div class="wrap bar">
     <a class="brand" href="#"><span class="mark" aria-hidden="true"></span><span><b>İŞİM ÇÖZ</b><small>Günlük hayatın dijital yardımcısı</small></span></a>
     <nav class="navl">
-      <a href="#hesaplama">Hesaplama</a><a href="#belgeler">Belgeler</a><a href="#hakkinda">Hakkında</a>
+      <a href="#hesaplama">Hesaplama</a><a href="#belgeler">Belgeler</a><a href="#haklarim">Haklarım</a><a href="#yardim">Yol göster</a>
     </nav>
   </div>
 </div>
@@ -127,7 +153,7 @@
 <main><div class="wrap" id="view"></div></main>
 <footer>
   <div class="wrap">
-    <div class="links"><a href="#hakkinda">Hakkında</a><a href="#gizlilik">Gizlilik ve Kullanım</a><a href="#hesaplama">Tüm araçlar</a></div>
+    <div class="links"><a href="#haklarim">Haklarım</a><a href="#yardim">Bana yol göster</a><a href="#hakkinda">Hakkında</a><a href="#gizlilik">Gizlilik ve Kullanım</a><a href="#hesaplama">Tüm araçlar</a></div>
     <div>İşim Çöz'deki hesaplamalar ve şablonlar genel bilgilendirme amaçlıdır; resmi ya da hukuki tavsiye yerine geçmez. Önemli kararlar öncesinde ilgili kurum veya bir uzmana danışın.</div>
   </div>
 </footer>
@@ -166,9 +192,13 @@
     {id:"dilekce", cat:"belgeler", e:"📝", t:"Genel dilekçe hazırla", d:"Herhangi bir kuruma dilekçe oluştur.", k:"dilekçe dilekce başvuru basvuru kurum belediye okul resmi yazı"},
     {id:"istifa", cat:"belgeler", e:"🚪", t:"İstifa dilekçesi hazırla", d:"İşverenine vereceğin istifa dilekçesi.", k:"istifa işten ayrılma isten ayrilma iş is dilekçe dilekce"},
     {id:"kirabildirim", cat:"belgeler", e:"✉️", t:"Kira artış bildirimi", d:"Kiracıya gönderilecek kira artış yazısı.", k:"kira artış bildirim ihtar ev sahibi kiracı yazı mektup"},
+    {id:"kiraci", cat:"haklarim", e:"🏠", t:"Kiracı hakları rehberi", d:"Kira artışı, depozito, tahliye ve arabuluculuk.", k:"kiracı kiraci ev sahibi tahliye çıkarma cikarma depozito güvence kira artış arabulucu ihtiyaç"},
+    {id:"tuketici", cat:"haklarim", e:"🛍️", t:"Tüketici hakları rehberi", d:"İade, cayma hakkı, ayıplı ürün ve hakem heyeti.", k:"iade cayma internet alışveriş alisveris ayıplı ayipli bozuk arızalı arizali tüketici tuketici hakem heyeti şikayet sikayet garanti"},
+    {id:"calisan", cat:"haklarim", e:"👷", t:"Çalışan hakları rehberi", d:"Kıdem ve ihbar tazminatı, yıllık izin, fazla mesai.", k:"kıdem kidem tazminat ihbar izin yıllık yillik fazla mesai işten çıkarıldım isten cikarildim işçi isci çalışan calisan"},
     {id:"cv", cat:"belgeler", e:"📄", t:"Basit CV hazırla", d:"Dakikalar içinde düzenli bir özgeçmiş.", k:"cv özgeçmiş ozgecmis iş başvurusu is basvurusu resume"}
   ];
   const TOOL = Object.fromEntries(TOOLS.map(t=>[t.id,t]));
+  const CATNAME = {hesaplama:"Hesaplama", belgeler:"Belgeler", haklarim:"Haklarım"};
   const norm = s => s.toLocaleLowerCase("tr-TR").replace(/[ıi̇]/g,"i").replace(/ş/g,"s").replace(/ğ/g,"g").replace(/ü/g,"u").replace(/ö/g,"o").replace(/ç/g,"c");
   function findTools(q){
     const STOP=["istiyorum","istiyom","nasil","kadar","icin","bir","yapmak","lazim","bulmak","benim","bana","yardim","olan","olarak","gerek","gerekiyor","ogrenmek"];
@@ -200,7 +230,7 @@
         if(!q){ box.innerHTML=""; return; }
         const hits=findTools(q);
         box.innerHTML = hits.length ? hits.map(t=>`<a href="#${t.id}"><span>${t.e} ${esc(t.t)}</span><span>→</span></a>`).join("")
-          : `<div class="none">Bunun için henüz bir aracımız yok. Aşağıdaki kategorilere göz atabilirsin.</div>`;
+          : `<div class="none">Bunun için tam bir eşleşme bulamadık. <a href="#yardim" style="color:#fff;font-weight:700">Birkaç soruyla birlikte bulalım →</a></div>`;
       };
       $("#sForm").addEventListener("submit",e=>{ e.preventDefault(); run(); const f=$("#results a"); if(f && findTools($("#q").value).length===1) location.hash=f.getAttribute("href"); });
       $("#q").addEventListener("input",()=>{ clearTimeout(run.h); run.h=setTimeout(run,250); });
@@ -215,17 +245,17 @@
       <div class="cats">
         <a class="cat" href="#hesaplama">${ICON.calc}<b>Hesaplama</b><small>Maaş, kredi, KDV, kira ve daha fazlası</small></a>
         <a class="cat" href="#belgeler">${ICON.doc}<b>Belge hazırla</b><small>Dilekçe, istifa yazısı, CV</small></a>
-        <a class="cat" href="#haklarim"><span class="soon">Yakında</span>${ICON.scale}<b>Haklarım</b><small>Kiracı, tüketici ve çalışan hakları</small></a>
-        <a class="cat" href="#akilli"><span class="soon">Yakında</span>${ICON.bot}<b>Akıllı yardım</b><small>Sorunu anlat, yapay zekâ yol göstersin</small></a>
+        <a class="cat" href="#haklarim">${ICON.scale}<b>Haklarım</b><small>Kiracı, tüketici ve çalışan hakları</small></a>
+        <a class="cat" href="#yardim">${ICON.bot}<b>Bana yol göster</b><small>Birkaç soruyu yanıtla, doğru çözüme git</small></a>
       </div>
       <h2 style="margin-top:28px">Popüler çözümler</h2>
-      <div class="pop">${["maas","kredi","kira","kdv","dilekce","cv"].map(id=>{const t=TOOL[id];return `<a href="#${id}"><i>${t.e}</i><span>${esc(t.t)}</span><em>→</em></a>`}).join("")}</div>`;
+      <div class="pop">${["maas","kredi","kira","kdv","tuketici","calisan","dilekce","cv"].map(id=>{const t=TOOL[id];return `<a href="#${id}"><i>${t.e}</i><span>${esc(t.t)}</span><em>→</em></a>`}).join("")}</div>`;
   }
 
   function category(cat){
     hero(false);
-    const title = cat==="hesaplama"?"Hesaplama araçları":"Belge hazırla";
-    $("#view").innerHTML = `<div class="crumb"><a href="#">Ana sayfa</a> / ${title}</div><h2>${title}</h2>
+    const title = {hesaplama:"Hesaplama araçları", belgeler:"Belge hazırla", haklarim:"Haklarım"}[cat];
+    $("#view").innerHTML = `<div class="crumb"><a href="#">Ana sayfa</a> / ${title}</div><h2>${title}</h2>${cat==="haklarim"?'<p class="note" style="margin-top:-6px">Sade dille hazırlanmış, kaynakları belirtilmiş rehberler. Hukuki tavsiye yerine geçmez.</p>':""}
       <div class="pop">${TOOLS.filter(t=>t.cat===cat).map(t=>`<a href="#${t.id}"><i>${t.e}</i><span>${esc(t.t)}<br><small style="color:var(--muted);font-weight:500">${esc(t.d)}</small></span><em>→</em></a>`).join("")}</div>`;
   }
 
@@ -241,7 +271,7 @@
     hero(false);
     const t=TOOL[id];
     const others=TOOLS.filter(x=>x.cat===t.cat&&x.id!==id);
-    $("#view").innerHTML = `<div class="crumb"><a href="#">Ana sayfa</a> / <a href="#${t.cat}">${t.cat==="hesaplama"?"Hesaplama":"Belgeler"}</a></div>
+    $("#view").innerHTML = `<div class="crumb"><a href="#">Ana sayfa</a> / <a href="#${t.cat}">${CATNAME[t.cat]}</a></div>
       <div class="tool"><h1>${t.e} ${esc(t.t)}</h1><p class="lead">${esc(t.d)}</p>${inner}</div>
       <div class="others"><h2 style="font-size:17px">Diğer araçlar</h2>${others.map(o=>`<a href="#${o.id}">${o.e} ${esc(o.t)}</a>`).join("")}</div>`;
     document.title = t.t+" – İşim Çöz";
@@ -511,12 +541,123 @@ ${(v.beceri||"……").split(",").map(x=>x.trim()).filter(Boolean).join(" · ")}
     });
   }
 
+
+  // ---------------- rights guides ----------------
+  const LAW = {
+    tbk:'<a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6098&MevzuatTur=1&MevzuatTertip=5" target="_blank" rel="noopener">6098 sayılı Türk Borçlar Kanunu</a>',
+    tkhk:'<a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6502&MevzuatTur=1&MevzuatTertip=5" target="_blank" rel="noopener">6502 sayılı Tüketicinin Korunması Hakkında Kanun</a>',
+    ik:'<a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=4857&MevzuatTur=1&MevzuatTertip=5" target="_blank" rel="noopener">4857 sayılı İş Kanunu</a>',
+    edevlet:'<a href="https://www.turkiye.gov.tr" target="_blank" rel="noopener">e-Devlet (turkiye.gov.tr)</a>'
+  };
+  const GUIDES = {
+    kiraci:{ title:"Kiracı hakları", upd:"Kasım 2026",
+      sum:"Ev sahibi kirayı yasal sınırın üzerinde artıramaz, seni ancak kanunda sayılan sebeplerle çıkarabilir. Anlaşmazlıkta dava açmadan önce arabulucuya gitmek gerekir.",
+      parts:[
+        ["Kira en fazla ne kadar artabilir?", `<p>Yenilenen sözleşmelerde kira artışı, bir önceki yılın <b>TÜFE 12 aylık ortalamasını</b> aşamaz (TBK m.344). Bu oran her ay TÜİK'in enflasyon verisiyle değişir.</p><p><b>Kasım 2026</b>'da yenilenen sözleşmeler için üst sınır <b>%31,23</b>'tür.</p><p><a href="#kira">Kira artışı hesaplama aracı →</a></p>`],
+        ["Depozito (güvence bedeli)", `<ul><li>Depozito en fazla <b>3 aylık kira</b> kadar olabilir; fazlası istenemez (TBK m.342).</li><li>Para olarak verilen depozitonun, ev sahibinin onayı olmadan çekilemeyecek şekilde vadeli bir banka hesabına yatırılması gerekir.</li><li>Evden çıkarken taşınmazın durumunu gösteren, iki tarafın imzaladığı bir <b>teslim tutanağı</b> hazırla ve fotoğraf çek. Depozito anlaşmazlıklarının çoğu belge eksikliğinden çıkar.</li></ul>`],
+        ["Ev sahibi beni hangi durumlarda çıkarabilir?", `<p>Tahliye sebepleri kanunda sınırlı olarak sayılmıştır. Başlıcaları:</p><ul><li><b>Kira ödenmemesi:</b> Ev sahibinin 30 gün süre veren yazılı ihtarına rağmen ödememek (TBK m.315).</li><li><b>Gerçek konut ihtiyacı:</b> Ev sahibinin kendisi, eşi, çocukları veya bakmakla yükümlü olduğu kişiler için samimi ve zorunlu ihtiyaç (TBK m.350).</li><li><b>Yeniden inşa veya esaslı onarım</b> (TBK m.350).</li><li><b>Evi yeni satın alan kişinin ihtiyacı</b> (TBK m.351).</li><li><b>Yazılı tahliye taahhüdü</b> vermişsen, ya da bir kira yılı içinde kirayı geciktirdiğin için <b>iki haklı ihtar</b> almışsan (TBK m.352).</li><li><b>10 yıllık uzama süresi</b> dolduktan sonra ev sahibi, sebep göstermeden de sözleşmeyi sona erdirebilir (TBK m.347).</li></ul><p>Bunların dışında “evi boşalt, daha yüksek kiraya vereceğim” demek tek başına tahliye sebebi değildir.</p>`],
+        ["Sözleşmenin süresi bitince ne olur?", `<p>Konut kiralarında sözleşme süresi bittiğinde kiracı en az 15 gün önce bildirimde bulunup çıkmazsa sözleşme <b>aynı şartlarla bir yıl uzamış</b> sayılır (TBK m.347). Ev sahibi, sadece süre bitti diye seni çıkaramaz.</p>`],
+        ["Anlaşamazsak ne yapmalıyım?", `<p><b>1 Eylül 2023</b>'ten bu yana kira ilişkisinden doğan uyuşmazlıklarda (tahliye, kira tespiti, kira ve depozito alacağı gibi) dava açmadan önce <b>arabulucuya başvurmak zorunludur</b>. İlamsız icra yoluyla tahliye bu kuralın dışındadır. Arabuluculuk bürolarına adliyelerden başvurabilirsin.</p>`],
+        ["Kendini korumak için ipuçları", `<ul><li>Kirayı her zaman <b>bankadan, açıklamasına “… ayı kirası” yazarak</b> öde.</li><li>Ev sahibiyle önemli konuları yazılı (mesaj, e-posta) konuş.</li><li>Boş kâğıda ya da tarihsiz tahliye taahhüdü imzalama.</li></ul>`]
+      ],
+      src:[LAW.tbk+" (m.315, 342, 344, 347, 350–352)","Kasım 2026 kira artış oranı: TÜİK Ekim 2026 enflasyon verisi","Kira uyuşmazlıklarında dava şartı arabuluculuk: 7445 sayılı Kanun ile 6325 sayılı Kanun m.18/B"]
+    },
+    tuketici:{ title:"Tüketici hakları", upd:"Kasım 2026",
+      sum:"İnternetten aldığın ürünü 14 gün içinde sebep göstermeden iade edebilirsin. Ürün bozuk çıkarsa 4 hakkın var. Satıcı sorunu çözmezse 186.000 TL'nin altındaki şikâyetler için Tüketici Hakem Heyeti'ne ücretsiz başvurursun.",
+      parts:[
+        ["İnternetten aldığım ürünü iade edebilir miyim? (Cayma hakkı)", `<ul><li>İnternet, telefon gibi uzaktan yapılan alışverişlerde ürünü <b>teslim aldığın günden itibaren 14 gün içinde</b>, hiçbir gerekçe göstermeden ve ceza ödemeden iade edebilirsin (6502 m.48).</li><li>Satıcıya iade isteğini bildirdikten sonra ürünü de 14 gün içinde geri göndermelisin. Mümkünse satıcının anlaşmalı kargo kodunu kullan.</li><li><b>İstisnalar:</b> Sana özel üretilen ürünler, çabuk bozulan gıdalar, ambalajı açılmış hijyen ürünleri, açılmış dijital içerikler gibi bazı ürünlerde cayma hakkı yoktur.</li></ul>`],
+        ["Ürün bozuk ya da arızalı çıktı (Ayıplı mal)", `<p>Ürün kusurlu, eksik ya da anlatılandan farklıysa cayma hakkından ayrı olarak <b>dört seçimlik hakkın</b> vardır (6502 m.11):</p><ul><li>Sözleşmeden dönüp parayı geri almak</li><li>Ürünü ayıpsız yenisiyle değiştirmek</li><li>Ücretsiz onarım istemek</li><li>Ayıp oranında indirim istemek</li></ul><p>Hangisini seçeceğine sen karar verirsin. Teslimden itibaren <b>2 yıl</b> içinde ortaya çıkan ayıplar için bu haklar devam eder. 14 günlük cayma süresini kaçırsan bile bu hakların kaybolmaz.</p>`],
+        ["Satıcı sorunumu çözmüyor, ne yapmalıyım?", `<ul><li><b>2026 yılında 186.000 TL'nin altındaki</b> uyuşmazlıklarda il veya ilçe <b>Tüketici Hakem Heyeti</b>'ne başvurmak zorunludur. Başvuru <b>ücretsizdir</b>, avukat gerekmez.</li><li>En kolay yol: ${LAW.edevlet} → “Tüketici Hakem Heyetlerine Başvuru (TÜBİS)”. Kaymakamlığa dilekçeyle de başvurabilirsin.</li><li>Fatura, sipariş ekranı, yazışmalar ve fotoğraflar gibi belgeleri ekle.</li><li>Heyet kararına <b>15 gün içinde</b> tüketici mahkemesinde itiraz edilebilir.</li><li>Tutar sınırın üzerindeyse tüketici mahkemesi görevlidir; dava açmadan önce arabulucuya başvurulması gerekir.</li></ul><p><a href="#dilekce">Dilekçe hazırlama aracı →</a></p>`],
+        ["İpuçları", `<ul><li>Sipariş onayı, fatura ve kargo bilgilerini sakla; satıcıyla yazışmalarının ekran görüntüsünü al.</li><li>Kargoyu teslim alırken paket hasarlıysa tutanak tutturmadan teslim alma.</li></ul>`]
+      ],
+      src:[LAW.tkhk+" (m.8, 11, 48, 68)","Mesafeli Sözleşmeler Yönetmeliği","2026 hakem heyeti parasal sınırı: Ticaret Bakanlığı tebliği, Resmî Gazete (1 Ocak 2026'dan itibaren geçerli)"]
+    },
+    calisan:{ title:"Çalışan hakları", upd:"Kasım 2026",
+      sum:"En az 1 yıl çalıştıktan sonra yıllık izin ve (şartları varsa) kıdem tazminatı hakkın doğar. İşten çıkarılırken bildirim süresi verilmezse ihbar tazminatı ödenir. İşçilik alacakları için dava açmadan önce arabulucuya gitmek gerekir.",
+      parts:[
+        ["Yıllık izin hakkım kaç gün?", `<table class="tbl"><tr><td>1 yıldan 5 yıla kadar (5 dahil)</td><td>en az 14 gün</td></tr><tr><td>5 yıldan fazla, 15 yıldan az</td><td>en az 20 gün</td></tr><tr><td>15 yıl ve daha fazla</td><td>en az 26 gün</td></tr></table><ul><li>18 yaş ve altı ile 50 yaş ve üstündeki çalışanlara en az <b>20 gün</b> izin verilmelidir.</li><li>İzin süresine denk gelen hafta tatili ve resmî tatiller izinden sayılmaz.</li><li>Bu süreler en azıdır; sözleşmeyle artırılabilir, azaltılamaz (İş Kanunu m.53).</li></ul>`],
+        ["Kıdem tazminatı kimlere ödenir?", `<p>Aynı işverende <b>en az 1 yıl</b> çalışmış olmak gerekir. Başlıca durumlar:</p><ul><li>İşverenin seni haklı bir sebep olmadan çıkarması</li><li>Senin haklı bir sebeple (ör. maaşın ödenmemesi) işten ayrılman</li><li>Askerlik, emeklilik ya da yaş dışındaki şartları doldurman</li><li>Kadın çalışanın evlendikten sonraki 1 yıl içinde ayrılması</li></ul><p>Normal istifada genellikle kıdem tazminatı ödenmez.</p><p><b>Hesap:</b> Her tam çalışma yılı için <b>30 günlük brüt ücret</b> ödenir. Yıllık tutar tavanı aşamaz: <b>1 Temmuz – 31 Aralık 2026</b> için tavan <b>73.729,87 TL</b>'dir.</p>`],
+        ["İhbar süresi ve ihbar tazminatı", `<p>Belirsiz süreli sözleşmeyi bitiren taraf, karşı tarafa önceden bildirimde bulunmalıdır (İş Kanunu m.17):</p><table class="tbl"><tr><td>6 aydan az çalışma</td><td>2 hafta</td></tr><tr><td>6 ay – 1,5 yıl</td><td>4 hafta</td></tr><tr><td>1,5 yıl – 3 yıl</td><td>6 hafta</td></tr><tr><td>3 yıldan fazla</td><td>8 hafta</td></tr></table><p>Bu süreye uymayan taraf, süreye karşılık gelen ücret tutarında <b>ihbar tazminatı</b> öder. İstifa ederken de bu sürelere dikkat et.</p><p><a href="#istifa">İstifa dilekçesi hazırla →</a></p>`],
+        ["Fazla mesai", `<ul><li>Haftalık 45 saati aşan çalışma fazla mesaidir. Her saati için ücret <b>%50 zamlı</b> ödenir.</li><li>Ücret yerine her fazla saat için 1,5 saat serbest zaman da verilebilir.</li><li>Yılda en fazla 270 saat fazla mesai yapılabilir ve bunun için onayın gerekir.</li></ul>`],
+        ["Haklarımı nasıl ararım?", `<ul><li>Kıdem, ihbar, fazla mesai ve izin ücreti gibi alacaklar için dava açmadan önce <b>arabulucuya başvurmak zorunludur</b> (7036 sayılı Kanun m.3). Adliyedeki arabuluculuk bürosuna başvurabilirsin.</li><li>Sorularını <b>ALO 170</b> hattına da sorabilirsin.</li><li>Maaş bordrolarını, banka dekontlarını ve SGK hizmet dökümünü (e-Devlet) sakla.</li></ul>`]
+      ],
+      src:[LAW.ik+" (m.17, 41, 53)","1475 sayılı eski İş Kanunu m.14 (kıdem tazminatı)","7036 sayılı İş Mahkemeleri Kanunu m.3 (dava şartı arabuluculuk)","Temmuz–Aralık 2026 kıdem tazminatı tavanı: memur maaş katsayısına göre belirlenen tutar"]
+    }
+  };
+  function guide(id){
+    hero(false);
+    const g=GUIDES[id], t=TOOL[id];
+    document.title = g.title+" – İşim Çöz";
+    const others=TOOLS.filter(x=>x.cat==="haklarim"&&x.id!==id);
+    $("#view").innerHTML = `<div class="crumb"><a href="#">Ana sayfa</a> / <a href="#haklarim">Haklarım</a></div>
+      <article class="guide"><h1>${t.e} ${g.title}</h1><div class="upd">Son güncelleme: ${g.upd}</div>
+      <div class="sum"><b>Kısaca</b>${g.sum}</div>
+      ${g.parts.map((p,i)=>`<details ${i===0?"open":""}><summary>${p[0]}</summary><div class="body">${p[1]}</div></details>`).join("")}
+      <div class="src"><b>Kaynaklar:</b><br>${g.src.join("<br>")}<br><br>Bu rehber genel bilgilendirme amaçlıdır, hukuki tavsiye değildir. Kendi durumun için bir avukata, ilgili kuruma ya da baroların ücretsiz adli yardım bürolarına danışabilirsin.</div></article>
+      <div class="others"><h2 style="font-size:17px">Diğer rehberler</h2>${others.map(o=>`<a href="#${o.id}">${o.e} ${esc(o.t)}</a>`).join("")}</div>`;
+  }
+
+  // ---------------- "Bana yol göster" wizard (no AI) ----------------
+  const WIZ = {
+    q:"Sorunun hangi konuyla ilgili?",
+    o:[
+      {e:"💼", t:"İş hayatı", d:"Maaş, istifa, işten çıkarılma, izin", q:"İş hayatında ne oldu?", o:[
+        {e:"📈", t:"Zam aldım, yeni maaşımı öğrenmek istiyorum", go:["maas"]},
+        {e:"🚪", t:"İşten ayrılmak istiyorum", go:["istifa","calisan"]},
+        {e:"⚠️", t:"İşten çıkarıldım, haklarım neler?", go:["calisan"]},
+        {e:"🏖️", t:"Kaç gün iznim olduğunu öğrenmek istiyorum", go:["calisan"]},
+        {e:"📄", t:"İş başvurusu için CV hazırlamak istiyorum", go:["cv"]}]},
+      {e:"🏠", t:"Ev ve kira", d:"Kira artışı, ev sahibi, depozito", q:"Kira konusunda ne yaşıyorsun?", o:[
+        {e:"🧮", t:"Kiram ne kadar artacak?", go:["kira","kiraci"]},
+        {e:"✉️", t:"Ev sahibiyim, kiracıya artış bildirmek istiyorum", go:["kira","kirabildirim"]},
+        {e:"🚪", t:"Ev sahibi evden çıkmamı istiyor", go:["kiraci"]},
+        {e:"💰", t:"Depozitomu geri alamıyorum", go:["kiraci"]}]},
+      {e:"🛍️", t:"Alışveriş", d:"İade, bozuk ürün, satıcı şikâyeti", q:"Alışverişte ne oldu?", o:[
+        {e:"↩️", t:"İnternetten aldığım ürünü iade etmek istiyorum", go:["tuketici"]},
+        {e:"🔧", t:"Aldığım ürün bozuk ya da arızalı çıktı", go:["tuketici"]},
+        {e:"😠", t:"Satıcı sorunumu çözmüyor, şikâyet etmek istiyorum", go:["tuketici","dilekce"]}]},
+      {e:"💳", t:"Para ve hesap", d:"Kredi, birikim, KDV, yüzde", q:"Ne hesaplamak istiyorsun?", o:[
+        {e:"🏦", t:"Kredi çekersem taksitim ne olur?", go:["kredi"]},
+        {e:"🎯", t:"Bir hedef için ne kadar biriktirmeliyim?", go:["birikim"]},
+        {e:"🧾", t:"Bir fiyatın KDV'sini hesaplamak istiyorum", go:["kdv"]},
+        {e:"％", t:"İndirim ya da artış yüzdesi hesaplamak istiyorum", go:["yuzde"]}]},
+      {e:"🏛️", t:"Resmî işler", d:"Dilekçe, süre ve tarih hesabı", q:"Ne yapman gerekiyor?", o:[
+        {e:"📝", t:"Bir kuruma dilekçe yazmam gerekiyor", go:["dilekce"]},
+        {e:"📅", t:"İki tarih arasındaki süreyi bulmak istiyorum", go:["tarih"]}]}
+    ]
+  };
+  function wizard(){
+    hero(false); document.title="Bana yol göster – İşim Çöz";
+    let path=[];
+    const draw=()=>{
+      const node = path.reduce((n,i)=>n.o[i], WIZ);
+      const step = path.length;
+      if(node.go){
+        $("#view").innerHTML = `<div class="crumb"><a href="#">Ana sayfa</a> / Bana yol göster</div><section class="wiz">
+          <div class="steps"><span class="on"></span><span class="on"></span><span class="on"></span></div>
+          <h1>Senin için önerilerimiz</h1><p class="note" style="margin-top:4px">“${esc(node.t)}”</p>
+          <div class="pop">${node.go.map(id=>{const t=TOOL[id];return `<a href="#${id}"><i>${t.e}</i><span>${esc(t.t)}<br><small style="color:var(--muted);font-weight:500">${esc(t.d)}</small></span><em>→</em></a>`}).join("")}</div>
+          <button class="back" type="button" id="wb">← Baştan başla</button></section>`;
+        $("#wb").onclick=()=>{ path=[]; draw(); };
+        return;
+      }
+      $("#view").innerHTML = `<div class="crumb"><a href="#">Ana sayfa</a> / Bana yol göster</div><section class="wiz">
+        <div class="steps"><span class="on"></span><span class="${step>=1?"on":""}"></span><span></span></div>
+        <h1>${esc(node.q)}</h1><p class="note" style="margin-top:4px">Sana en uygun aracı ya da rehberi bulalım.</p>
+        <div class="opts">${node.o.map((o,i)=>`<button class="opt" type="button" data-i="${i}"><i>${o.e}</i><span>${esc(o.t)}${o.d?`<small>${esc(o.d)}</small>`:""}</span></button>`).join("")}</div>
+        ${step?'<button class="back" type="button" id="wb">← Geri</button>':""}</section>`;
+      document.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{ path.push(+b.dataset.i); draw(); window.scrollTo(0,0); });
+      if(step) $("#wb").onclick=()=>{ path.pop(); draw(); };
+    };
+    draw();
+  }
+
   function about(){
     hero(false);
     $("#view").innerHTML = `<div class="prose"><h1>Hakkında</h1>
       <p><b>İşim Çöz</b>, günlük hayatta karşılaştığın küçük ama can sıkıcı işleri hızlıca çözmen için hazırlanmış ücretsiz bir yardımcıdır. Maaş zammı, kredi taksiti, KDV ya da kira artışı hesaplayabilir; dilekçe, istifa yazısı ve CV gibi belgeleri dakikalar içinde hazırlayabilirsin.</p>
       <p>İlkelerimiz basit: kullanıcıyı yormamak, mümkün olduğunca ücretsiz olmak, karmaşık işleri basitleştirmek ve kişisel bilgileri gereksiz yere toplamamak.</p>
-      <p>Yakında <b>Haklarım</b> bölümünde kiracı, tüketici ve çalışan haklarıyla ilgili kaynaklı rehberler ekleyeceğiz.</p></div>`;
+      <p><b>Haklarım</b> bölümünde kiracı, tüketici ve çalışan haklarını sade bir dille, kaynaklarıyla anlatıyoruz. Ne arayacağını bilmiyorsan <a href="#yardim">Bana yol göster</a> bölümü birkaç soruyla seni doğru yere götürür.</p></div>`;
   }
   function privacy(){
     hero(false);
@@ -531,9 +672,9 @@ ${(v.beceri||"……").split(",").map(x=>x.trim()).filter(Boolean).join(" · ")}
     const h = location.hash.slice(1);
     document.title = "İşim Çöz – Günlük hayatın dijital yardımcısı";
     if(TOOLS_VIEW[h]) TOOLS_VIEW[h]();
-    else if(h==="hesaplama"||h==="belgeler") category(h);
-    else if(h==="haklarim") soon("Haklarım","Kiracı, tüketici ve çalışan haklarını sade bir dille, kaynaklarıyla anlatan rehberler.");
-    else if(h==="akilli") soon("Akıllı yardım","Sorununu kendi cümlelerinle anlat; yapay zekâ seni doğru araca ve adımlara yönlendirsin.");
+    else if(GUIDES[h]) guide(h);
+    else if(h==="hesaplama"||h==="belgeler"||h==="haklarim") category(h);
+    else if(h==="yardim"||h==="akilli") wizard();
     else if(h==="hakkinda") about();
     else if(h==="gizlilik") privacy();
     else home();
